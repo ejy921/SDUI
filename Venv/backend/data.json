@@ -1,0 +1,151 @@
+{
+    "components": [
+        {
+            "component": "products",
+            "title": "Products list",
+            "data": [
+                {
+                    "id": 1,
+                    "name": "Dove Shampoo",
+                    "price": 9.5,
+                    "selected": false
+                },
+                {
+                    "id": 2,
+                    "name": "Dove Conditioner",
+                    "price": 8.5,
+                    "selected": true
+                },
+                {
+                    "id": 3,
+                    "name": "Himalaya Purifying Neem Face Wash",
+                    "price": 5.5,
+                    "selected": true
+                },
+                {
+                    "id": 4,
+                    "name": "Colgate Toothpaste",
+                    "price": 3.5,
+                    "selected": false
+                },
+                {
+                    "id": 5,
+                    "name": "Head & Shoulders Shampoo",
+                    "price": 10.5,
+                    "selected": false
+                },
+                {
+                    "id": 6,
+                    "name": "Pantene Conditioner",
+                    "price": 7.5,
+                    "selected": true
+                },
+                {
+                    "id": 7,
+                    "name": "Neutrogena Face Wash",
+                    "price": 6.5,
+                    "selected": false
+                },
+                {
+                    "id": 8,
+                    "name": "Listerine Mouthwash",
+                    "price": 4.5,
+                    "selected": true
+                },
+                {
+                    "id": 9,
+                    "name": "Vaseline Lotion",
+                    "price": 5.5,
+                    "selected": false
+                },
+                {
+                    "id": 10,
+                    "name": "Nivea Body Wash",
+                    "price": 7.5,
+                    "selected": true
+                }
+            ]
+        },
+        {
+            "component": "customers",
+            "title": "Customers details",
+            "data": [
+                {
+                    "customer_id": 1,
+                    "name": "Jinny Eo",
+                    "email": "jinny@gmail.com",
+                    "address": {
+                        "street": "1115 8th Ave",
+                        "city": "Grinnell",
+                        "state": "IA",
+                        "zip": 50112
+                    }
+                },
+                {
+                    "customer_id": 2,
+                    "name": "Sam Kim",
+                    "email": "sam@gmail.com",
+                    "address": {
+                        "street": "2132 1st Ave",
+                        "city": "New York",
+                        "state": "NY",
+                        "zip": 30234
+                    }
+                },
+                {
+                    "customer_id": 2,
+                    "name": "Minwoo Park",
+                    "email": "minwoopark@gmail.com",
+                    "address": {
+                        "street": "2133 2nd Ave",
+                        "city": "New York",
+                        "state": "NY",
+                        "zip": 30234
+                    }
+                }
+            ]
+        },
+        {
+            "component": "orders",
+            "title": "Total orders",
+            "data": [
+                {
+                    "order_id": 1,
+                    "customer_id": 100,
+                    "product_ids": [
+                        1,
+                        3,
+                        5
+                    ],
+                    "current_state": "selected"
+                },
+                {
+                    "order_id": 2,
+                    "customer_id": 1,
+                    "product_ids": [
+                        3
+                    ],
+                    "current_state": "Verified"
+                },
+                {
+                    "order_id": 3,
+                    "customer_id": 1,
+                    "product_ids": [
+                        4,
+                        7
+                    ],
+                    "current_state": "Verified"
+                },
+                {
+                    "order_id": 4,
+                    "customer_id": 1,
+                    "product_ids": [
+                        10,
+                        4
+                    ],
+                    "current_state": "Verified"
+                }
+            ]
+        }
+    ]
+}

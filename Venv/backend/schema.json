@@ -1,0 +1,139 @@
+{
+    "information":{
+            "current_userId": 1,
+            "display_light": true
+    },
+    "workflow": {
+        "transitions": {
+            "Placed": {
+                "next": "Verified",
+                "conditions": {
+                    "field": ["customers", "address"],
+                    "hasKeys": ["street", "city", "state", "zip"],
+                    "onClick": true
+                }
+            },
+            "Verified": {
+                "next": "Packaging",
+                "conditions": {
+                    "field": ["orders", "product_ids"],
+                    "minLength": 1
+                }
+            },
+            "Packaging": {
+                "next": "Delivery",
+                "conditions": {
+                    "field": ["orders", "ready_for_delivery"],
+                    "equals": true
+                }
+            },
+            "Delivery": {
+                "next": "Completed",
+                "conditions": {
+                    "field": ["orders", "delivered"],
+                    "equals": true
+                }
+            }
+        }
+    },
+    "pages": [
+        {
+            "page_name": "Dashboard",
+            "layout": {
+                "display": "grid",
+                "gridRows": "1fr 8fr",
+                "gridColumns": "8fr 2fr",
+                "gridAreas": ["nav nav", "main aside"],
+                "components": [
+                    {
+                        "component_type": "navigation-bar",
+                        "layout": "row",
+                        "gridArea": "nav",
+                        "color": "#B6C4A2",
+                        "title": "Jinny's Shop",
+                        "components": [
+                            {
+                                "header": "Jinny's Shop",
+                                "profile-picture": "button-icon",
+                                "username": "text-small",
+                                "cart": "button-icon"
+                            }
+                        ]
+                    },  
+                    {
+                        "component_type": "products",
+                        "layout": "grid",
+                        "gridArea": "main",
+                        "color": "white",
+                        "title": "Products",
+                        "components": [
+                            {
+                                "title": "text-large",
+                                "product-list": "grid"
+                            }
+                        ]
+                    },
+                    {
+                        "component_type": "cart-list",
+                        "layout": "column",
+                        "gridArea": "aside",
+                        "color": "#DCE2BD",
+                        "title": "Cart",
+                        "components": [
+                            {
+                                "title": "text-medium",
+                                "cart-list": "column",
+                                "view-cart": "button-text",
+                                "checkout": "button-text"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "page_name": "Profile Page",
+            "layout": {
+                "components": [
+                    {
+                        "component_type": "navigation-bar",
+                        "layout": "row",
+                        "position": "top-panel",
+                        "title": "Home",
+                        "components": [
+                            {
+                                "profile-picture": "button-icon",
+                                "username": "text-small",
+                                "cart": "button-icon"
+                            }
+                        ]
+                    },  
+                    {
+                        "component_type": "order-history",
+                        "layout": "column-of-rows",
+                        "position": "center",
+                        "title": "Orders",
+                        "components": [
+                            {
+                                "title": "text-large",
+                                "order-list": "column-of-rows"
+                            }
+                        ]
+                    },
+                    {
+                        "component_type": "sidebar",
+                        "layout": "column",
+                        "position": "left-panel",
+                        "title": "Options",
+                        "components": [
+                            {
+                                "title": "text-medium",
+                                "options": "column"
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ]
+}
