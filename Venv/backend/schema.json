@@ -51,14 +51,12 @@
                         "gridArea": "nav",
                         "color": "#B6C4A2",
                         "title": "Jinny's Shop",
-                        "components": [
-                            {
-                                "header": "Jinny's Shop",
-                                "profile-picture": "button-icon",
-                                "username": "text-small",
-                                "cart": "button-icon"
-                            }
-                        ]
+                        "components": {
+                            "header": "Jinny's Shop",
+                            "profile-picture": "button-icon",
+                            "username": "text-small",
+                            "cart": "button-icon"
+                        }
                     },  
                     {
                         "component_type": "products",
@@ -66,12 +64,17 @@
                         "gridArea": "main",
                         "color": "white",
                         "title": "Products",
-                        "components": [
-                            {
-                                "title": "text-large",
-                                "product-list": "grid"
+                        "components": {
+                            "title": "text-large",
+                            "product-list": {
+                                "selected-color": "#c5e0d8",
+                                "unselected-color": "#e1edea",
+                                "width": "250px",
+                                "height": "150px",
+                                "margin": "10px",
+                                "padding": "5px"
                             }
-                        ]
+                        }
                     },
                     {
                         "component_type": "cart-list",
@@ -79,14 +82,12 @@
                         "gridArea": "aside",
                         "color": "#DCE2BD",
                         "title": "Cart",
-                        "components": [
-                            {
-                                "title": "text-medium",
-                                "cart-list": "column",
-                                "view-cart": "button-text",
-                                "checkout": "button-text"
-                            }
-                        ]
+                        "components":     {
+                            "title": "text-medium",
+                            "cart-list": "column",
+                            "view-cart": "button-text",
+                            "checkout": "button-text"
+                        }
                     }
                 ]
             }
@@ -100,37 +101,31 @@
                         "layout": "row",
                         "position": "top-panel",
                         "title": "Home",
-                        "components": [
-                            {
-                                "profile-picture": "button-icon",
-                                "username": "text-small",
-                                "cart": "button-icon"
-                            }
-                        ]
+                        "components": {
+                            "profile-picture": "button-icon",
+                            "username": "text-small",
+                            "cart": "button-icon"
+                        }
                     },  
                     {
                         "component_type": "order-history",
                         "layout": "column-of-rows",
                         "position": "center",
                         "title": "Orders",
-                        "components": [
-                            {
-                                "title": "text-large",
-                                "order-list": "column-of-rows"
-                            }
-                        ]
+                        "components": {
+                            "title": "text-large",
+                            "order-list": "column-of-rows"
+                        }
                     },
                     {
                         "component_type": "sidebar",
                         "layout": "column",
                         "position": "left-panel",
                         "title": "Options",
-                        "components": [
-                            {
-                                "title": "text-medium",
-                                "options": "column"
-                            }
-                        ]
+                        "components": {
+                            "title": "text-medium",
+                            "options": "column"
+                        }
                     }
                 ]
             }
