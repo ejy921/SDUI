@@ -1,4 +1,5 @@
 import './App.css';
+import ComponentMap from './ComponentMap.js';
 import React, { useEffect, useState } from 'react';
 
 function App() {
@@ -33,8 +34,9 @@ function App() {
         gridTemplateColumns: ly.gridColumns, 
         gridTemplateAreas: `"${ly.gridAreas.join('" "')}"`
         }}>
-        {ly.components.map((component, index) => { // map through the components
+        {ly.components.map((component, index) => {
           const HTMLTag =  component.gridArea || 'div';
+          const ComponentToRender = ComponentMap[component.component_type];
           return React.createElement
             (
               HTMLTag, 
@@ -42,38 +44,22 @@ function App() {
                style: {backgroundColor: component.color, gridArea: component.gridArea}},
                <>
                 <h2 style={{ marginLeft: '30px'}}>{component.title}</h2>
-                {component.component_type === 'products' && renderComponent(component)}
+                {/* {component.component_type === 'products' && renderComponent(component)} */}
+                {ComponentToRender ? (
+                <ComponentToRender
+                  data={components.find(c => c.component === component.component_type)?.data || []}
+                  onProductClick={productClicked} 
+                  onSubmit={submitOrder}// for now
+                />
+              ) : (
+                <p style={{ marginLeft: '30px' }}>Unsupported component type: {component.component_type}</p>
+              )}
                </>
             ); 
         })}
       </div>
     )
 
-  }
-
-  // render individual UI component 
-  const renderComponent = (UIcomponent) => {
-    return <div>
-      {components
-        .filter(component => component.component === 'products')
-        .map((component, index) => (
-          <div key={index} style={{ display: 'flex', flexWrap: 'wrap'}}>
-            {component.data.map((item, i) => {
-              const hasBoolean = Object.values(item).some(value => typeof value === 'boolean');
-
-              return (
-                <div key={i}>
-                  {/* If one of the fields has a boolean data type, it automatically renders to a box */}
-                  {hasBoolean && (
-                    <div style={{ backgroundColor: item.selected ? '#c5e0d8' : '#e1edea', width: '250px', height: '150px', margin: '10px', padding: '5px', textAlign: 'center', borderRadius: '5px', cursor: 'pointer'}}
-                     onClick={() => productClicked(item.id)}>
-                      <p style={{ paddingTop: '5px'}}>{item.name}</p>
-                      <p>{item.price}</p>
-                    </div>)}
-                </div>);})}
-          </div>))}
-          <button onClick={submitOrder} style={{ backgroundColor: '#B6C4A2', width: '150px', height: '50px', textAlign: 'center', borderRadius: '10px', cursor: 'pointer', border: 'None', margin: '10px'}}>Order items</button>
-      </div>
   }
 
   // flips only selected value -> returns updated product as JSON

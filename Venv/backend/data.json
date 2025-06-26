@@ -20,7 +20,7 @@
                     "id": 3,
                     "name": "Himalaya Purifying Neem Face Wash",
                     "price": 5.5,
-                    "selected": true
+                    "selected": false
                 },
                 {
                     "id": 4,
@@ -50,7 +50,7 @@
                     "id": 8,
                     "name": "Listerine Mouthwash",
                     "price": 4.5,
-                    "selected": true
+                    "selected": false
                 },
                 {
                     "id": 9,
