@@ -38,7 +38,7 @@
                     "id": 6,
                     "name": "Pantene Conditioner",
                     "price": 7.5,
-                    "selected": true
+                    "selected": false
                 },
                 {
                     "id": 7,

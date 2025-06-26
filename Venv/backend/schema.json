@@ -53,7 +53,7 @@
                         "title": "Jinny's Shop",
                         "components": {
                             "header": "Jinny's Shop",
-                            "profile-picture": "button-icon",
+                            "profile-pic": "button-icon",
                             "username": "text-small",
                             "cart": "button-icon"
                         }
@@ -66,13 +66,26 @@
                         "title": "Products",
                         "components": {
                             "title": "text-large",
-                            "product-list": {
-                                "selected-color": "#c5e0d8",
-                                "unselected-color": "#e1edea",
+                            "product_list": {
+                                "selectedColor": "#c5e0d8",
+                                "unselectedColor": "#e1edea",
                                 "width": "250px",
                                 "height": "150px",
                                 "margin": "10px",
-                                "padding": "5px"
+                                "padding": "5px",
+                                "textAlign": "center",
+                                "borderRadius": "5px",
+                                "cursor": "pointer"
+                            },
+                            "button": {
+                                "backgroundColor": "#B6C4A2",
+                                "width": "150px",
+                                "height": "50px",
+                                "textAlign": "center",
+                                "borderRadius": "10px",
+                                "cursor": "pointer",
+                                "border": "None",
+                                "margin": "10px"
                             }
                         }
                     },

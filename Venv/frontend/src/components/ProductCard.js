@@ -1,9 +1,11 @@
 import React from 'react';
 
-const ProductCard = ({ data, onProductClick, onSubmit }) => {
+const ProductCard = ({ pages, data, onProductClick, onSubmit }) => {
 
 const hasBoolean = item =>
     Object.values(item).some(value => typeof value === 'boolean');
+    const productStyle = pages[0].layout.components[1].components.product_list;
+    const buttonStyle = pages[0]
 
   return (
     <div>
@@ -13,14 +15,8 @@ const hasBoolean = item =>
             {hasBoolean(item) && (
               <div
                 style={{
-                  backgroundColor: item.selected ? '#c5e0d8' : '#e1edea',
-                  width: '250px',
-                  height: '150px',
-                  margin: '10px',
-                  padding: '5px',
-                  textAlign: 'center',
-                  borderRadius: '5px',
-                  cursor: 'pointer',
+                  ...productStyle,
+                  backgroundColor: item.selected ? productStyle.selectedColor : productStyle.unselectedColor,
                 }}
                 onClick={() => onProductClick(item.id)}
               >

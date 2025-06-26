@@ -44,9 +44,9 @@ function App() {
                style: {backgroundColor: component.color, gridArea: component.gridArea}},
                <>
                 <h2 style={{ marginLeft: '30px'}}>{component.title}</h2>
-                {/* {component.component_type === 'products' && renderComponent(component)} */}
                 {ComponentToRender ? (
                 <ComponentToRender
+                  pages={UIschema.pages}
                   data={components.find(c => c.component === component.component_type)?.data || []}
                   onProductClick={productClicked} 
                   onSubmit={submitOrder}// for now
