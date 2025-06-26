@@ -7,8 +7,8 @@ Instructions:
 
 1. `git clone https://github.com/ejy921/SDUI.git`
 2. `cd SDUI`
-3. `python -m venv venv`
-4. `venv\Scripts\activate (for Windows), venv/bin/activate (for Mac)`
+3. `python -m venv Venv`
+4. `Venv\Scripts\activate (for Windows), Venv/bin/activate (for Mac)`
 5. `pip install -r requirements.txt`
 
 
